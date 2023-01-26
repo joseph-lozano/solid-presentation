@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .code {
+    @apply bg-[rgb(30,41,59)] font-mono text-[rgb(80,250,123)] py-1 text-base;
+  }
+
+  .code::before {
+    content: "`";
+  }
+  .code::after {
+    content: "`";
+  }
+}

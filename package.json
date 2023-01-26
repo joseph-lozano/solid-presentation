@@ -1,0 +1,35 @@
+{
+  "name": "solid-presentation",
+  "scripts": {
+    "dev": "solid-start dev",
+    "build": "solid-start build",
+    "start": "solid-start start"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^18.11.18",
+    "@types/prismjs": "^1.26.0",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^2.49.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "solid-start-node": "^0.2.15",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4",
+    "vite": "^3.2.5"
+  },
+  "dependencies": {
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.7.0",
+    "dracula-prism": "^2.1.13",
+    "prismjs": "^1.29.0",
+    "solid-js": "^1.6.9",
+    "solid-start": "^0.2.15",
+    "undici": "^5.15.1"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
