@@ -49,8 +49,6 @@ export default function SlideOne() {
             <div class="prose-xl prose">
               <ol>
                 <li class={visible(1)}>Because the code never runs more than once, <span class="code">setInterval</span> is safe to call.</li>
-                <li class={visible(2)}>When you call <span class="code">createSignal</span>, the value you get back is actually a function.</li>
-                <li>Solid's compiler will go through</li>
               </ol>
             </div>
           </div>
