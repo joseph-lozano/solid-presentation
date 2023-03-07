@@ -21,7 +21,7 @@ function Counter({propsCount}) {
 
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
 
-export default function SlideOne() {
+export default function SlideFive() {
   const [step, setStep] = createSignal(0);
 
   const visible = (x: number) => (step() >= x ? "visible" : "invisible");

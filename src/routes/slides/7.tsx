@@ -73,7 +73,7 @@ export default function SlideSeven() {
             </div>
           </div>
           <div class="card-body">
-            <h2 class="card-title">How React works pt. 2</h2>
+            <h2 class="card-title">Control flow</h2>
             <div class="prose-xl prose">
               <ol>
                 <li class={visible(1)}>

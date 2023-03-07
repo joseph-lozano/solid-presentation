@@ -20,7 +20,7 @@ function Counter() {
         Click me
       </button>
 
-      <div>The square of the count is {resource()}</div>
+      <div>the two drawn cards are: {resource()}</div>
     </>
   );
 }
@@ -63,7 +63,7 @@ function Counter() {
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
 const html2 = Prism.highlight(code2, Prism.languages.javascript, "javascript");
 
-export default function SlideThree() {
+export default function SlideFour() {
   const [step, setStep] = createSignal(0);
 
   const visible = (x: number) => (step() >= x ? "visible" : "invisible");
