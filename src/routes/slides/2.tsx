@@ -33,7 +33,7 @@ export default function SlideTwo() {
         href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.css"
       />
       <div onClick={() => setStep((s) => s + 1)}>
-        <div class="card card-side w-[1600px] bg-base-100 shadow-xl">
+        <div class="card card-side w-[1200px] bg-base-100 shadow-xl">
           <div data-theme="night">
             <div class={`mockup-code h-full pl-3 ${visible(7)}`}>
               <pre>
