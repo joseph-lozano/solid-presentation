@@ -16,6 +16,7 @@ function Counter({propsCount}) {
 }
 
 // This does not work in SolidJS
+import { render } from "solid-js/web";
 import { createSignal } from "solid-js";
 
 function Counter() {
@@ -28,6 +29,7 @@ function Counter() {
   );
 }
 
+render(() => <Counter /> , document.getElementById("app")!);
 `;
 
 const code2 = `
@@ -79,7 +81,7 @@ export default function SlideSeven() {
             <div class="mockup-code h-full pl-3">
               <pre>
                 <Show
-                  when={step() < 4}
+                  when={step() < 3}
                   fallback={<code innerHTML={html2}></code>}
                 >
                   <code innerHTML={html}></code>
@@ -98,11 +100,25 @@ export default function SlideSeven() {
                 <li class={visible(2)}>
                   Conversly, because solid components{" "}
                   <span class="bold">do not</span> re-run, other methods have to
-                  be used for control flow.
+                  be used for control flow.{" "}
+                  <a
+                    href="https://playground.solidjs.com/anonymous/e32ce560-c677-43b2-a913-0e27b061ae62"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Playground
+                  </a>
                 </li>
                 <li class={visible(3)}>
                   Solid provides the <span class="code">Show</span> and{" "}
-                  <span class="code">Match</span> components.
+                  <span class="code">Match</span> components.{" "}
+                  <a
+                    href="https://playground.solidjs.com/anonymous/b179c2d2-121f-4ad3-8f3e-6d0c9f66a088"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Playground
+                  </a>
                 </li>
               </ol>
             </div>

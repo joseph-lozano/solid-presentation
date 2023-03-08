@@ -22,6 +22,8 @@ function Counter() {
     </>
   );
 }
+
+render(() => <Counter /> , document.getElementById("app")!);
 `;
 
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
@@ -46,12 +48,17 @@ export default function SlideThree() {
             </div>
           </div>
           <div class="card-body">
-            <h2 class="card-title">Derived Signals and Effects</h2>
+            <h2 class="card-title">Signals, Effects and Derived Signals</h2>
             <div class="prose-xl prose">
               <ol>
+                <li class={visible(0)}>
+                  Signals are the primary primitive for SolidJS. Calling{" "}
+                  <span class="code">createSignal</span> returns a reader and
+                  writer, much like React's <span class="code">useState</span>
+                </li>
                 <li class={visible(1)}>
-                  Effects are functions that wrap signals and
-                  re-executes them whenever a the signal's value changes.
+                  Effects are functions that wrap signals and re-executes them
+                  whenever a the signal's value changes.
                 </li>
 
                 <li class={visible(2)}>
@@ -67,9 +74,12 @@ export default function SlideThree() {
                   updated.
                 </li>
                 <li class={visible(5)}>
-                  When <span class="code">setCount</span> is invoked, the function inside{" "}
-                  <span class="code">createEffect</span> will be automatically
-                  re-executed.
+                  When <span class="code">setCount</span> is invoked, the
+                  function inside <span class="code">createEffect</span> will be
+                  automatically re-executed.
+                </li>
+                <li class={visible(6)}>
+                <a href="https://playground.solidjs.com/anonymous/6da3858f-6087-49a1-93fb-8359448201ca" target="_blank" rel="noopener noreferrer">Playground</a>
                 </li>
               </ol>
             </div>

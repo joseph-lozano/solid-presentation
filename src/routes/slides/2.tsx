@@ -2,20 +2,16 @@ import Prism from "prismjs";
 import { createSignal } from "solid-js";
 
 const code = `
-import React, { useState } from "react";
+import { useState } from "react";
 
-function Counter({propsCount}) {
+export default function Counter() {
   const [count, setCount] = useState(0);
 
   setInterval(() => {
-     console.log("I get logged every second")
+    console.log("I get logged every second and the count is " + count);
   }, 1000);
 
-  return (
-    <div onClick={() => setCount(count + 1)}>
-      Count: {count + propsCount}
-    </div>
-  );
+  return <div onClick={() => setCount(count + 1)}>Count: {count}</div>;
 }
 `;
 
@@ -51,12 +47,36 @@ export default function SlideFive() {
                   Components re-render everytime state or props change.
                 </li>
                 <li class={visible(3)}>
-                  a new <span class="code">setInterval</span> gets created every render.
+                  a new <span class="code">setInterval</span> gets created every
+                  render.
                 </li>
                 <li class={visible(4)}>
-                  I crashed serveral browser tabs testing this code because of the this memory leak.
+                  I crashed serveral browser tabs testing this code because of
+                  the this memory leak.{" "}
+                  <a
+                    href="https://codesandbox.io/s/busy-banzai-m3h200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CodeSandbox
+                  </a>
                 </li>
-                <li class={`${visible(5)} mt-8 list-none font-bold`}>
+                <li class={visible(5)}>
+                  You need to remember not only to wrap{" "}
+                  <span class="code">setInternal</span> in a{" "}
+                  <span class="code">useEffect</span>, but also to add any
+                  dependencies to the dependency array for{" "}
+                  <span class="code">useEffect</span> <strong>AND</strong>{" "}
+                  remember to clear the interval.{" "}
+                  <a
+                    href="https://codesandbox.io/s/kind-shape-4b4mdx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CodeSandbox
+                  </a>
+                </li>
+                <li class={`${visible(6)} mt-8 list-none font-bold`}>
                   SolidJS does not have these footguns.
                 </li>
               </ol>
