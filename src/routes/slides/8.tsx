@@ -93,14 +93,20 @@ export default function SlideEight() {
                 </li>
                 <li class={visible(3)}>
                   In this this code, each button can be incremented separately.{" "}
-                  <a target="_blank" href="https://playground.solidjs.com/anonymous/e1096cbf-9f2d-46c1-816c-cac801455eb8">
+                  <a
+                    target="_blank"
+                    href="https://playground.solidjs.com/anonymous/e1096cbf-9f2d-46c1-816c-cac801455eb8"
+                  >
                     Playground
                   </a>
                 </li>
                 <li class={visible(4)}>
                   But if you move the signal out of the component, then both
                   buttons will increment together.
-                  <a target="_blank" href="https://playground.solidjs.com/anonymous/4053f863-cda2-4b02-af79-09be9cc6ce0f">
+                  <a
+                    target="_blank"
+                    href="https://playground.solidjs.com/anonymous/4053f863-cda2-4b02-af79-09be9cc6ce0f"
+                  >
                     Playground
                   </a>
                 </li>

@@ -79,7 +79,13 @@ export default function SlideThree() {
                   automatically re-executed.
                 </li>
                 <li class={visible(6)}>
-                <a href="https://playground.solidjs.com/anonymous/6da3858f-6087-49a1-93fb-8359448201ca" target="_blank" rel="noopener noreferrer">Playground</a>
+                  <a
+                    href="https://playground.solidjs.com/anonymous/6da3858f-6087-49a1-93fb-8359448201ca"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Playground
+                  </a>
                 </li>
               </ol>
             </div>

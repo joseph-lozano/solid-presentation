@@ -82,7 +82,13 @@ export default function SlideFour() {
                   <span class="code">setCount</span> invokation.
                 </li>
                 <li class={visible(4)}>
-                  <a href="https://playground.solidjs.com/anonymous/6f976461-954b-4969-9e49-95fba252c65f" target="_blank" rel="noopener noreferrer">Playground</a>
+                  <a
+                    href="https://playground.solidjs.com/anonymous/6f976461-954b-4969-9e49-95fba252c65f"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Playground
+                  </a>
                 </li>
               </ol>
             </div>

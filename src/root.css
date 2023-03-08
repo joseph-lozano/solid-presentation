@@ -4,7 +4,7 @@
 
 @layer components {
   .code {
-    @apply bg-[rgb(30,41,59)] font-mono text-[rgb(80,250,123)] py-1 text-base;
+    @apply bg-[rgb(30,41,59)] py-1 font-mono text-base text-[rgb(80,250,123)];
   }
 
   .code::before {

@@ -17,9 +17,6 @@ import {
 } from "solid-start";
 import "./root.css";
 
-
-
-
 export default function Root() {
   const location = useLocation();
   const active = (path: string) =>

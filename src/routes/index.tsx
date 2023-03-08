@@ -10,7 +10,9 @@ export default function Home() {
           <p class="py-6">
             Simple and performant reactivity for building user interfaces.
           </p>
-          <A href="/slides/0" class="btn-primary btn">Get Started</A>
+          <A href="/slides/0" class="btn-primary btn">
+            Get Started
+          </A>
         </div>
       </div>
     </div>
