@@ -40,7 +40,7 @@ export default function SlideOne() {
             </div>
           </div>
           <div class="card-body">
-            <h2 class="card-title">Solid looks a lot like react</h2>
+            <h2 class="card-title">Solid looks a lot like React</h2>
             <div class="prose-xl prose">
               <ol>
                 <li class={visible(1)}>Solid uses JSX</li>

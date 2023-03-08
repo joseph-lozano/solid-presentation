@@ -19,7 +19,6 @@ function createSignal(value) {
   return [read, write];
 }
 
-
 createEffect(() => {
   console.log("The count is now", count());
 });

@@ -16,7 +16,7 @@ export default function SlideZero() {
                   <div>How React works</div>
                 </li>
                 <li class={visible(2)}>
-                  <div>How Solid works</div>
+                  <div>Comparing how solid works</div>
                 </li>
               </ol>
             </div>

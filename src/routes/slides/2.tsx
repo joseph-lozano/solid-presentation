@@ -52,7 +52,7 @@ export default function SlideFive() {
                 </li>
                 <li class={visible(4)}>
                   I crashed serveral browser tabs testing this code because of
-                  the this memory leak.{" "}
+                  this.{" "}
                   <a
                     href="https://codesandbox.io/s/busy-banzai-m3h200"
                     target="_blank"
@@ -63,7 +63,7 @@ export default function SlideFive() {
                 </li>
                 <li class={visible(5)}>
                   You need to remember not only to wrap{" "}
-                  <span class="code">setInternal</span> in a{" "}
+                  <span class="code">setInterval</span> in a{" "}
                   <span class="code">useEffect</span>, but also to add any
                   dependencies to the dependency array for{" "}
                   <span class="code">useEffect</span> <strong>AND</strong>{" "}

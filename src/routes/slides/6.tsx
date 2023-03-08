@@ -25,7 +25,7 @@ render(() => <Counter />, document.getElementById('app')!);
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
 
 export default function SlideSix() {
-  const [step, setStep] = createSignal(10);
+  const [step, setStep] = createSignal(0);
 
   const visible = (x: number) => (step() >= x ? "visible" : "invisible");
   return (
@@ -55,9 +55,18 @@ export default function SlideSix() {
                   href="https://playground.solidjs.com/anonymous/1545cfa1-7a0f-4747-82a8-b5af6612c84a"
                   target="_blank"
                   rel="noopener noreferrer"
+                  class={visible(1)}
                 >
                   Playground
                 </a>
+                <ol >
+                  <li class={visible(2)}>
+                    Compared to React, you don't need to remember:
+                  </li>
+                  <li class={visible(3)}>Cleaning up Effects</li>
+                  <li class={visible(4)}>Mananging Dependency Arrays</li>
+                  <li class={visible(5)}>Worry about memoizing expensive calculations that run revery re-render</li>
+                </ol>
               </ol>
             </div>
           </div>

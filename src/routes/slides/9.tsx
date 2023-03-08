@@ -1,4 +1,3 @@
-import Prism from "prismjs";
 import { createSignal } from "solid-js";
 
 export default function SlideNine() {
