@@ -2,17 +2,32 @@ import Prism from "prismjs";
 import { createSignal, Show } from "solid-js";
 
 const code = `
+// This works in React
 import React, { useState } from "react";
 
 function Counter({propsCount}) {
   const [shouldShow, setShouldShow] = useState(false);
-
+  
   return (
     <div onClick={() => setShouldShow(!shouldShow)}>
       {shouldShow ? "shouldShow is true" : "shouldShow is false"}
     </div>
   );
 }
+
+// This does not work in SolidJS
+import { createSignal } from "solid-js";
+
+function Counter() {
+  const [shouldShow, setShouldShow] = createSignal(false);
+  
+  return (
+    <div onClick={() => setShouldShow(!shouldShow)}>
+      {shouldShow() ? "shouldShow is true" : "shouldShow is false"}
+    </div>
+  );
+}
+
 `;
 
 const code2 = `
@@ -77,8 +92,8 @@ export default function SlideSeven() {
             <div class="prose-xl prose">
               <ol>
                 <li class={visible(1)}>
-                  Because components run every cycle, logic can be embedded in
-                  JSX
+                  In React, because components are re-run every time state or
+                  props change, control-flow can be embedded in the component
                 </li>
                 <li class={visible(2)}>
                   Conversly, because solid components{" "}

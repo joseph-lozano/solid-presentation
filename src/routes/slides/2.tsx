@@ -2,27 +2,26 @@ import Prism from "prismjs";
 import { createSignal } from "solid-js";
 
 const code = `
-function createSignal(value) {
-  const subscribers = new Set();
+import React, { useState } from "react";
 
-  const read = () => {
-    const listener = getCurrentListener();
-    if (listener) subscribers.add(listener);
-    return value;
-  };
+function Counter({propsCount}) {
+  const [count, setCount] = useState(0);
 
-  const write = (nextValue) => {
-    value = nextValue;
-    for (const sub of subscribers) sub.run();
-  };
+  setInterval(() => {
+     console.log("I get logged every second")
+  }, 1000);
 
-  return [read, write];
+  return (
+    <div onClick={() => setCount(count + 1)}>
+      Count: {count + propsCount}
+    </div>
+  );
 }
 `;
 
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
 
-export default function SlideTwo() {
+export default function SlideFive() {
   const [step, setStep] = createSignal(0);
 
   const visible = (x: number) => (step() >= x ? "visible" : "invisible");
@@ -35,35 +34,30 @@ export default function SlideTwo() {
       <div onClick={() => setStep((s) => s + 1)}>
         <div class="card card-side w-[1200px] bg-base-100 shadow-xl">
           <div data-theme="night">
-            <div class={`mockup-code h-full pl-3 ${visible(7)}`}>
+            <div class="mockup-code h-full pl-3">
               <pre>
                 <code innerHTML={html}></code>
               </pre>
             </div>
           </div>
           <div class="card-body">
-            <h2 class="card-title">How solid woks</h2>
+            <h2 class="card-title">How React works</h2>
             <div class="prose-xl prose">
               <ol>
                 <li class={visible(1)}>
-                  Solid is build on 3 fundamental primitives:
-                  <ol>
-                    <li class={visible(2)}>Signals</li>
-                    <li class={visible(3)}>Effects</li>
-                    <li class={visible(4)}>Memos</li>
-                  </ol>
+                  In React, a component's code runs on every render
                 </li>
-
-                <li class={visible(5)}>What are Signals?</li>
-                <li class={visible(6)}>
-                  Signals are event emitters that hold a list of subscriptions.
-                  They notify their subscribers whenever their value changes.
+                <li class={visible(2)}>
+                  Components re-render everytime state or props change.
                 </li>
-                <li class={visible(7)}>
-                  Here is a basic implementation of{" "}
-                  <span class="code">createSignal</span>, which returns{" "}
-                  <span class="code">read</span> and{" "}
-                  <span class="code">write</span> functions.
+                <li class={visible(3)}>
+                  a new <span class="code">setInterval</span> gets created every render.
+                </li>
+                <li class={visible(4)}>
+                  I crashed serveral browser tabs testing this code because of the this memory leak.
+                </li>
+                <li class={`${visible(5)} mt-8 list-none font-bold`}>
+                  SolidJS does not have these footguns.
                 </li>
               </ol>
             </div>

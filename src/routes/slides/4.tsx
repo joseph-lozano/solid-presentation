@@ -1,30 +1,6 @@
 import Prism from "prismjs";
 import { createSignal, Match, Switch } from "solid-js";
 
-const code2 = `
-import { render } from 'solid-js/web';
-import { createResource } from 'solid-js';
-
-function Counter() {
-
-  const [resource, {refetch, mutate}] = createResource(() => {
-    return fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=2")
-    .then(resp => resp.json())
-    .then(json => (json.cards))
-    .then(cards => cards.map(card => card.code).join(" "))
-  })
-
-  return (
-    <>
-      <button onClick={() => refetch()}>
-        Click me
-      </button>
-
-      <div>the two drawn cards are: {resource()}</div>
-    </>
-  );
-}
-`;
 const code = `
 import { render } from 'solid-js/web';
 import { createSignal, createMemo } from 'solid-js';
@@ -61,7 +37,6 @@ function Counter() {
 `;
 
 const html = Prism.highlight(code, Prism.languages.javascript, "javascript");
-const html2 = Prism.highlight(code2, Prism.languages.javascript, "javascript");
 
 export default function SlideFour() {
   const [step, setStep] = createSignal(0);
@@ -79,12 +54,8 @@ export default function SlideFour() {
             <div class={`mockup-code h-full pl-3 ${visible(1)}`}>
               <pre>
                 <Switch>
-                  <Match when={step() <= 4}>
+                  <Match when={step() >= 2}>
                     <code innerHTML={html}></code>
-                  </Match>
-
-                  <Match when={true}>
-                    <code innerHTML={html2}></code>
                   </Match>
                 </Switch>
               </pre>
@@ -109,14 +80,7 @@ export default function SlideFour() {
                   <span class="code">setCount</span> invokation.
                 </li>
               </ol>
-              <ol class="mt-24">
-                <li class={visible(4)}>
-                  <span class="font-bold">Resources</span> are like signals for
-                  async data . <span class="code">createResource</span> returns
-                  a reader function like a signal, as well as functions for
-                  mutating and refetching.
-                </li>
-              </ol>
+                
             </div>
           </div>
         </div>

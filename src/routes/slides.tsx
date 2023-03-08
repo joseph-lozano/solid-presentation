@@ -8,7 +8,7 @@ import { NextIcon, PrevIcon } from "~/components/Heroicons";
 
 export function routeData() {
   return createServerData$(() => {
-    let max = fs.readdirSync("./src/routes/slides").length;
+    let max = fs.readdirSync("./src/routes/slides").length - 1 ;
     return max;
   });
 }

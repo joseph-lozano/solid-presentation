@@ -66,6 +66,11 @@ export default function SlideThree() {
                   <span class="code">squaredCount</span> will be automatically
                   updated.
                 </li>
+                <li class={visible(5)}>
+                  When <span class="code">setCount</span> is invoked, the function inside{" "}
+                  <span class="code">createEffect</span> will be automatically
+                  re-executed.
+                </li>
               </ol>
             </div>
           </div>
